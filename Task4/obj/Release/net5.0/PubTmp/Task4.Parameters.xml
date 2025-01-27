@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Task4ForItransition" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\RepositoryForGithub\\Itransition\\task-4\\Task4\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

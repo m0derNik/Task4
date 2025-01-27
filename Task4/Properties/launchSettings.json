@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Task4": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ConnectionStrings:DefaultConnection": "Server=localhost;Database=Task3;Trusted_Connection=True;"
+      },
+      "applicationUrl": "https://localhost:54463;http://localhost:54464"
+    }
+  }
+}
