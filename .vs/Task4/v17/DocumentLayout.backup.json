@@ -72,15 +72,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Task4",
+              "Title": "Task4.csproj",
               "DocumentMoniker": "C:\\Users\\kiril\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\C# projects\\Task4\\Task4\\Task4.csproj",
               "RelativeDocumentMoniker": "Task4\\Task4.csproj",
-              "ToolTip": "C:\\Users\\kiril\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\C# projects\\Task4\\Task4\\Task4.csproj*",
-              "RelativeToolTip": "Task4\\Task4.csproj*",
+              "ToolTip": "C:\\Users\\kiril\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\\u043F\u0440\u043E\u0435\u043A\u0442\u044B\\C# projects\\Task4\\Task4\\Task4.csproj",
+              "RelativeToolTip": "Task4\\Task4.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-28T22:14:50.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T22:14:50.856Z"
             },
             {
               "$type": "Document",
@@ -92,8 +91,7 @@
               "RelativeToolTip": "Task4\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T22:04:57.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T22:04:57.907Z"
             },
             {
               "$type": "Document",
@@ -105,8 +103,7 @@
               "RelativeToolTip": "Task4\\Startup.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAIwDQAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T22:02:39.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T22:02:39.17Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "Task4\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAADUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-28T21:44:01.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T21:44:01.544Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "Task4\\Views\\Account\\Register.cshtml",
               "ViewState": "AgIAAAQAAAAAAAAAAADwvy4AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-28T21:43:19.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T21:43:19.048Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "Task4\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-28T21:42:51.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T21:42:51.89Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "Task4\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-28T21:38:37.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T21:38:37.548Z"
             }
           ]
         }
