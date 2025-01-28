@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\kiril\\OneDrive\\Рабочий стол\\проекты\\C# projects\\Task4\\Task4\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Task4.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Task4.dkr93iocf5.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\kiril\\OneDrive\\Рабочий стол\\проекты\\C# projects\\Task4\\Task4\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

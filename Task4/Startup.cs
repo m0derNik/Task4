@@ -1,15 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Task4.Filters;
 using Task4.Models;
 using Task4.Services;
@@ -25,49 +20,61 @@ namespace Task4
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigureFilters(services);
+
+            ConfigureDatabaseAndIdentity(services);
+
+            ConfigureCustomServices(services);
+
+            ConfigureMvc(services);
+        }
+
+        private void ConfigureFilters(IServiceCollection services)
+        {
             services.AddScoped<BlockStatusFilter>();
-            services.AddDbContext<ApplicationContext>(opt =>
-            {
-                opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
-            });
+        }
 
-            services.AddIdentity<User, IdentityRole>(opt =>
-            {
-                opt.Password.RequiredLength = 1;
-                opt.Password.RequireNonAlphanumeric = false;
-                opt.Password.RequireUppercase = false;
-                opt.Password.RequireLowercase = false;
-                opt.Password.RequireDigit = false;
-                opt.SignIn.RequireConfirmedEmail = false;
-                opt.User.RequireUniqueEmail = true;
-            }).AddEntityFrameworkStores<ApplicationContext>();
-            services.AddControllersWithViews(opt=> 
-            {
-                opt.Filters.Add(typeof(BlockStatusFilter));
-            }).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
+        private void ConfigureDatabaseAndIdentity(IServiceCollection services)
+        {
+            services.AddDbContext<ApplicationContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 1; 
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireDigit = false;
+                options.SignIn.RequireConfirmedEmail = false; 
+                options.User.RequireUniqueEmail = true; 
+            }).AddEntityFrameworkStores<ApplicationContext>()
+              .AddDefaultTokenProviders(); 
+        }
+
+        private void ConfigureCustomServices(IServiceCollection services)
+        {
             services.AddTransient<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IUserManagementService, UserManagementService>();
             services.AddTransient<IUserStatusService, UserStatusService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        private void ConfigureMvc(IServiceCollection services)
+        {
+            services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add<BlockStatusFilter>();
+            })
+            .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Latest);
+        }
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            ConfigureExceptionHandling(app, env);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -82,6 +89,19 @@ namespace Task4
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private void ConfigureExceptionHandling(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts(); 
+            }
         }
     }
 }

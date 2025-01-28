@@ -62,8 +62,13 @@ namespace Task4.Controllers
                 var result = await _authenticationService.LoginAsync(model);
                 if (result.Succeeded)
                 {
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
                     return RedirectToAction("Index", "Home");
                 }
+
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Incorrect login or password");
